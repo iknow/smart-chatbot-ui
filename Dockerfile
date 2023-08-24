@@ -10,6 +10,7 @@ RUN npm ci
 # ---- Build ----
 FROM dependencies AS build
 COPY . .
+ENV NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT="You are OrenGPT, a large language model working for Engoo. Follow the user's instructions carefully. Respond using markdown."
 RUN npm run build
 
 # ---- Production ----
