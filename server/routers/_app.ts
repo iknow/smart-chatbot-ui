@@ -6,8 +6,9 @@ import { models } from './models';
 import { prompts } from './prompts';
 import { publicPrompts } from './publicPrompts';
 import { settings } from './settings';
-
+import { admin } from './admin';
 export const appRouter = router({
+  admin,
   models,
   settings,
   prompts,
