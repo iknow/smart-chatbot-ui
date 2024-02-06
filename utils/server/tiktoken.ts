@@ -9,8 +9,15 @@ export const getTiktokenEncoding = async (model: string): Promise<Tiktoken> => {
   if (modelId.indexOf('text-davinci-') !== -1) {
     return new Tiktoken(p50k.bpe_ranks, p50k.special_tokens, p50k.pat_str);
   }
-  if (modelId.indexOf('gpt-3.5') !== -1 || modelId.indexOf('gpt-4') !== -1) {
-    return encoding_for_model(modelId, {
+  if (modelId.indexOf('gpt-3.5') !== -1) {
+    return encoding_for_model('gpt-3.5-turbo', {
+      '<|im_start|>': 100264,
+      '<|im_end|>': 100265,
+      '<|im_sep|>': 100266,
+    });
+  }
+  if (modelId.indexOf('gpt-4') !== -1) {
+    return encoding_for_model('gpt-4', {
       '<|im_start|>': 100264,
       '<|im_end|>': 100265,
       '<|im_sep|>': 100266,
