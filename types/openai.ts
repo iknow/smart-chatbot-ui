@@ -3,10 +3,12 @@ import * as z from 'zod';
 export enum OpenAIModelID {
   GPT_3_5 = 'gpt-3.5-turbo',
   GPT_3_5_16K = 'gpt-3.5-turbo-16k',
+  GPT_3_5_INSTRUCT = 'gpt-3.5-turbo-instruct',
   GPT_3_5_AZ = 'gpt-35-turbo',
   GPT_3_5_16K_AZ = 'gpt-35-turbo-16k',
   GPT_4 = 'gpt-4',
   GPT_4_32K = 'gpt-4-32k',
+  GPT_4_1106 = 'gpt-4-1106-preview',
   TEXT_EMBEDDING_ADA_002 = 'text-embedding-ada-002',
 }
 
@@ -44,6 +46,13 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     tokenLimit: 16000,
     type: OpenAIModelType.CHAT
   },
+  [OpenAIModelID.GPT_3_5_INSTRUCT]: {
+    id: OpenAIModelID.GPT_3_5_INSTRUCT,
+    name: 'GPT-3.5-INSTRUCT',
+    maxLength: 48000,
+    tokenLimit: 16000,
+    type: OpenAIModelType.CHAT
+  },
   [OpenAIModelID.GPT_3_5_AZ]: {
     id: OpenAIModelID.GPT_3_5_AZ,
     name: 'GPT-3.5',
@@ -61,6 +70,13 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.GPT_4]: {
     id: OpenAIModelID.GPT_4,
     name: 'GPT-4',
+    maxLength: 24000,
+    tokenLimit: 8000,
+    type: OpenAIModelType.CHAT
+  },
+  [OpenAIModelID.GPT_4_1106]: {
+    id: OpenAIModelID.GPT_4_1106,
+    name: 'GPT-4-1106',
     maxLength: 24000,
     tokenLimit: 8000,
     type: OpenAIModelType.CHAT
