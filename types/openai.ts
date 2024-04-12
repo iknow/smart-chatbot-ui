@@ -7,6 +7,7 @@ export enum OpenAIModelID {
   GPT_3_5_AZ = 'gpt-35-turbo',
   GPT_3_5_16K_AZ = 'gpt-35-turbo-16k',
   GPT_4 = 'gpt-4',
+  GPT_4_TURBO = 'gpt-4-turbo',
   GPT_4_32K = 'gpt-4-32k',
   GPT_4_1106 = 'gpt-4-1106-preview',
   TEXT_EMBEDDING_ADA_002 = 'text-embedding-ada-002',
@@ -74,11 +75,18 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     tokenLimit: 8000,
     type: OpenAIModelType.CHAT
   },
+  [OpenAIModelID.GPT_4_TURBO]: {
+    id: OpenAIModelID.GPT_4_TURBO,
+    name: 'GPT-4-TURBO',
+    maxLength: 128000,
+    tokenLimit: 8000,
+    type: OpenAIModelType.CHAT
+  },
   [OpenAIModelID.GPT_4_1106]: {
     id: OpenAIModelID.GPT_4_1106,
     name: 'GPT-4-1106',
-    maxLength: 24000,
-    tokenLimit: 8000,
+    maxLength: 128000,
+    tokenLimit: 4096,
     type: OpenAIModelType.CHAT
   },
   [OpenAIModelID.GPT_4_32K]: {
