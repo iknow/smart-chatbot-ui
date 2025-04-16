@@ -119,22 +119,22 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.GPT_4_1]: {
     id: OpenAIModelID.GPT_4_1,
     name: 'GPT-4.1',
-    maxLength: 96000,
-    tokenLimit: 128000,
+    maxLength: 1047576,
+    tokenLimit: 32768,
     type: OpenAIModelType.CHAT
   },
   [OpenAIModelID.GPT_4_1_MINI]: {
     id: OpenAIModelID.GPT_4_1_MINI,
     name: 'GPT-4.1 Mini',
-    maxLength: 96000,
-    tokenLimit: 128000,
+    maxLength: 1047576,
+    tokenLimit: 32768,
     type: OpenAIModelType.CHAT
   },
   [OpenAIModelID.GPT_4_1_NANO]: {
     id: OpenAIModelID.GPT_4_1_NANO,
     name: 'GPT-4.1 Nano',
-    maxLength: 96000,
-    tokenLimit: 128000,
+    maxLength: 1047576,
+    tokenLimit: 32768,
     type: OpenAIModelType.CHAT
   },
   [OpenAIModelID.TEXT_EMBEDDING_ADA_002]: {
