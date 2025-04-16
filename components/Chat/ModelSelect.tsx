@@ -39,7 +39,7 @@ export const ModelSelect = () => {
           value={selectedConversation?.model?.id || defaultModelId}
           onChange={handleChange}
         >
-          {models.filter(m => m.type === OpenAIModelType.CHAT).map((model) => (
+          {models.sort((a, b) => a.id.localeCompare(b.id)).filter(m => m.type === OpenAIModelType.CHAT).map((model) => (
             <option
               key={model.id}
               value={model.id}
